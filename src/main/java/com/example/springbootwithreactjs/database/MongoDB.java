@@ -19,11 +19,15 @@ public class MongoDB {
 
     static public MongoDB getInstance(){
         if(instance == null){
-            instance = new MongoDB();
+            try {
+                instance = new MongoDB();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
         }
         return instance;
     }
-
+//test
     private MongoDB() throws UnknownHostException {
         Mongo mongo = new Mongo("localhost, 27017");
         db = mongo.getDB(DB_NAME);
