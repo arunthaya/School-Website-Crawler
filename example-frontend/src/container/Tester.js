@@ -29,13 +29,25 @@ class Tester extends Component {
     // }).then(function (response){
     //   console.log(response);
     // });
-      $.post(
-          "http://localhost:8080/urlsubmitted",
-          {suggest: this.state.value},
-          function(data, status){
-            alert(`Data is ${data}, status is ${status}`);
+    //   $.post(
+    //       "http://localhost:8080/urlsubmitted",
+    //       {suggest: this.state.value},
+    //       function(data, status){
+    //         alert(`Data is ${data}, status is ${status}`);
+    //       }
+    //   );
+
+      $.ajax({
+          type: "POST",
+          url: "http://localhost:8080/urlsubmitted",
+          data: {suggest: this.state.value},
+          success: function(msg){
+              alert("Data saved");
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown){
+              alert("some error");
           }
-      );
+      });
       event.preventDefault();
   }
 
@@ -56,7 +68,7 @@ class Tester extends Component {
             <form onSubmit={this.handleSubmit}>
               <div className="nice-wrap">
                   <input className="nice-textbox" type="text" placeholder="School website" value={this.state.value} onChange={this.handleChange}/>
-                  <input type="submit" value="Submit"/>
+                  <input id="btn" type="submit" value="Submit" onClick={this.handleSubmit}/>
               </div>
             </form>
         </header>
