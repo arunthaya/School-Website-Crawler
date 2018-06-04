@@ -1,8 +1,6 @@
 package com.example.springbootwithreactjs.database;
 
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.Mongo;
+import com.mongodb.*;
 
 import java.net.UnknownHostException;
 
@@ -13,6 +11,7 @@ public class MongoDB {
     //Key strings used for database purposes
     public static final String DB_NAME = "pageparser";
     public static final String COLLECTION_NAME = "roughparse";
+    public static final String URL = "url";
 
     private DB db;
     private DBCollection coll;
@@ -29,9 +28,18 @@ public class MongoDB {
     }
 //test
     private MongoDB() throws UnknownHostException {
-        Mongo mongo = new Mongo("localhost, 27017");
+        Mongo mongo = new MongoClient("localhost");
         db = mongo.getDB(DB_NAME);
         coll = db.getCollection(COLLECTION_NAME);
+        BasicDBObject temp = new BasicDBObject();
+        temp.append("hi", "helloWorld");
+        coll.insert(temp);
+    }
+
+    public void add(String page){
+        BasicDBObject temp = new BasicDBObject();
+        temp.append(URL, page);
+        coll.insert(temp);
     }
 
     /*Have to add logic where if it is a about page, has a location, or has pictures

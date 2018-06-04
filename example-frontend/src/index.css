@@ -4,27 +4,72 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+#navheader{
+  background: lightgray;
+}
+
 .table {
-  display: table;   /* Allow the centering to work */
+  display: inline-block;   /* Allow the centering to work */
   margin: 0 auto;
+  text-decoration: none;
+}
+
+.table a{
+  text-decoration: none;
+}
+
+.sliding-middle-out {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 3px;
+}
+.sliding-middle-out:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+.sliding-middle-out:hover:after {
+  width: 100%;
+  background: #fff;
 }
 
 nav{
-  background: #6574b2;
+  display: inline-block;
 }
 
+#btn{
+  padding: 15px;
+  border:none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  background-color: lightgray;
+}
+
+#btn:hover{
+  background-color: lightblue;
+}
+
+#btn:active{
+  background-color: dodgerblue;
+}
+
+
+
 .nice-textbox{
-  display: block;
+  margin-right: 5px;
   width: 500px;
-  margin-top: 50px;
   padding: 15px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   color: #a0a0a0;
   outline: none;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 ul#navbar{
@@ -38,5 +83,15 @@ ul#navbar li {
 }
 
 nav ul li:hover {
-  background: #00939C;
+  background: lightblue;
+  border-radius: 7px;
+}
+
+nav ul li:active {
+  background: dodgerblue;
+}
+
+#applyboard_logo{
+  display: inline-block;
+  margin-top: 10px;
 }
