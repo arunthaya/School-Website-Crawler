@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import $ from "jquery";
 import SchoolChecker from "./SchoolChecker";
 import SchoolUrl from "./SchoolUrl";
-import Tester from "./Tester.js";
-import $ from "jquery";
 
 class AddSchool extends Component{
     constructor(props){
@@ -41,10 +40,12 @@ class AddSchool extends Component{
     }
 
     render(){
-        return <div>
-            <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
-            <SchoolChecker/>
-        </div>;
+        return(
+            <div>
+                <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
+                <SchoolChecker hasWebsiteBeenChecked={this.state.websiteChecked}/>
+            </div>
+        );
     };
 }
 

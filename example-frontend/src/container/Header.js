@@ -11,9 +11,8 @@ const Header = () => (
             <div class="table">
                 <ul id="navbar">
                     <li><Link class="sliding-middle-out" to='/'>Home</Link></li>
-                    <li><Link class="sliding-middle-out" to='/tester'>Add School</Link></li>
+                    <li><Link class="sliding-middle-out" to='/addschool'>Add School</Link></li>
                     <li><Link class="sliding-middle-out" to='/searchbar'>Search / View</Link></li>
-                    <li><Link to='/addschool'>Add School</Link></li>
                 </ul>
             </div>
         </nav>
