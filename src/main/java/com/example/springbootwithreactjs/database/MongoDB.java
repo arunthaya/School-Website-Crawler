@@ -1,9 +1,6 @@
 package com.example.springbootwithreactjs.database;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.Mongo;
+import com.mongodb.*;
 
 import java.net.UnknownHostException;
 
@@ -31,9 +28,12 @@ public class MongoDB {
     }
 //test
     private MongoDB() throws UnknownHostException {
-        Mongo mongo = new Mongo("localhost, 27017");
+        Mongo mongo = new MongoClient("localhost");
         db = mongo.getDB(DB_NAME);
         coll = db.getCollection(COLLECTION_NAME);
+        BasicDBObject temp = new BasicDBObject();
+        temp.append("hi", "helloWorld");
+        coll.insert(temp);
     }
 
     public void add(String page){
