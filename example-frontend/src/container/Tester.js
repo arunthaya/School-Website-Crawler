@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import axios from 'axios';
 import $ from 'jquery';
 
 class Tester extends Component {
@@ -8,56 +7,37 @@ class Tester extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ponged: 'Not Ponged',
-      value: [],
+        value: [],
+        websiteChecked: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.ping = this.ping.bind(this);
   }
 
   handleChange(event){
-    console.log("A handl vnt ");
+    console.log("A handl event ");
     this.setState({value: event.target.value});
     console.log(`The resulting value is ${this.state.value}`)
   }
 
   handleSubmit(event){
-    //alert(`The resulting value is ${this.state.value}`);
-    // axios.post('http://localhost:8080/urlsubmitted',{
-    //   data: 'hello everyone',
-    // }).then(function (response){
-    //   console.log(response);
-    // });
-    //   $.post(
-    //       "http://localhost:8080/urlsubmitted",
-    //       {suggest: this.state.value},
-    //       function(data, status){
-    //         alert(`Data is ${data}, status is ${status}`);
-    //       }
-    //   );
-
+      const self = this;
+      if(this.state.value == null){
+          alert("Please enter something valid");
+          return;
+      }
       $.ajax({
           type: "POST",
           url: "http://localhost:8080/urlsubmitted",
           data: {suggest: this.state.value},
           success: function(msg){
-              alert("Data saved");
+              self.setState({websiteChecked: true});
           },
           error: function(XMLHttpRequest, textStatus, errorThrown){
-              alert("some error");
+              alert(`There was an error processing request: ${errorThrown}`);
           }
       });
       event.preventDefault();
-  }
-
-  ping() {
-    axios.get("http://localhost:8080/pong").then(res => {
-      alert("Received Successful response from server!" + this.state.value);
-      this.setState({ponged: 'Ponged! '});
-    }, err => {
-      alert("Server rejected response with: " + err);
-    });
   }
 
   render() {
@@ -72,12 +52,8 @@ class Tester extends Component {
               </div>
             </form>
         </header>
-        <p className="App-intro">
-          {/*<div>*/}
-            {/*<button onClick={this.ping}>Ping!</button>*/}
-            {/*<div>Ponged: {this.state.ponged}</div>*/}
-          {/*</div>*/}
-        </p>
+        <div className="App-intro">
+        </div>
       </div>
     );
   }

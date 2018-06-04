@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Tester from './Tester';
 import Searchbar from './Searchbar';
 import About from './About';
+import AddSchool from "./AddSchool";
 
 
 // The Main component renders one of the three provided
@@ -16,6 +17,7 @@ const Main = () => (
             <Route exact path='/' component={About}/>
             <Route exact path='/tester' component={Tester}/>
             <Route path='/searchbar' component={Searchbar}/>
+            <Route path='/addschool' component={AddSchool}/>
         </Switch>
     </main>
 )

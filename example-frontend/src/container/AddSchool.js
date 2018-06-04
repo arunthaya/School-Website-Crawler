@@ -1,20 +1,50 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import Tester from "./Tester";
 import SchoolChecker from "./SchoolChecker";
+import SchoolUrl from "./SchoolUrl";
+import Tester from "./Tester.js";
+import $ from "jquery";
 
 class AddSchool extends Component{
     constructor(props){
         super(props);
         this.state ={
+            websiteChecked: false,
             schoolChecked: false,
             value: [],
         };
+        this.onUpdate = this.onUpdate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    onUpdate = (val) => {
+        this.setState({
+            value: val
+        })
+    };
+
+    handleSubmit(event){
+        console.log('submit button pressed');
+        const self = this;
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/urlsubmitted",
+            data: {suggest: this.state.value},
+            success: function(msg){
+                self.setState({websiteChecked: true});
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                alert(`There was an error processing request: ${errorThrown}`);
+            }
+        });
+        event.preventDefault();
     }
 
     render(){
-        <Tester/>,
-        <SchoolChecker/>
+        return <div>
+            <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
+            <SchoolChecker/>
+        </div>;
     };
 }
 
