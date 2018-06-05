@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import $ from 'jquery';
 
 class SchoolUrl extends Component{
     constructor(props){
@@ -29,8 +28,6 @@ class SchoolUrl extends Component{
                     </div>
                 </form>
             </header>
-            <div className="App-intro">
-            </div>
         </div>);
     }
 }
