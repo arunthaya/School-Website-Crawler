@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0122ad48-959b-4b8a-84d3-f98a3f0cb95a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/src/container/AddSchool.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/src/container/AddSchool.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/src/container/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/src/container/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/src/container/SchoolChecker.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/src/container/SchoolChecker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/src/container/SchoolUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-frontend/src/container/SchoolUrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-frontend/src/container/Tester.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/PongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/PongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/PongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/MyRestController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,15 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example-frontend/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="41" selection-start-column="41" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example-frontend/src/container/Main.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,14 +28,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PongController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/PongController.java">
+      <file leaf-file-name="MyRestController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/MyRestController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -68,18 +71,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SchoolChecker.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example-frontend/src/container/SchoolChecker.js">
+      <file leaf-file-name="MyJsoup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/model/MyJsoup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example-frontend/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="MyTika.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/model/MyTika.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SchoolChecker.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example-frontend/src/container/SchoolChecker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="40" selection-start-column="40" selection-end-column="40" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="AddSchool.js" pinned="false" current-in-tab="false">
@@ -87,18 +111,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SchoolUrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example-frontend/src/container/SchoolUrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -121,6 +133,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -146,6 +159,10 @@
         <option value="$PROJECT_DIR$/example-frontend/src/container/SchoolChecker.js" />
         <option value="$PROJECT_DIR$/example-frontend/src/css/Checkmark.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/PongController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/model/MyJsoup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/model/MyTika.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/MyRestController.java" />
       </list>
     </option>
   </component>
@@ -154,6 +171,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/example-frontend/node_modules" />
@@ -164,9 +188,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -272,6 +296,15 @@
               <item name="React_page_parser" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootwithreactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-boot-with-react-js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="React_page_parser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -363,12 +396,12 @@
       <updated>1528093080156</updated>
       <workItem from="1528093087220" duration="95000" />
       <workItem from="1528123240634" duration="19793000" />
-      <workItem from="1528229044332" duration="2349000" />
+      <workItem from="1528229044332" duration="4741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22237000" />
+    <option name="totallyTimeSpent" value="24629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -394,7 +427,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7714844" weight="0.33102494" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2890625" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25716147" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49934897" weight="0.32968536" />
@@ -570,15 +603,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example-frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/example-frontend/src/css/Checkmark.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example-frontend/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/example-frontend/src/container/AddSchool.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -593,7 +626,7 @@
     <entry file="file://$PROJECT_DIR$/example-frontend/src/container/SchoolChecker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
+          <caret column="40" selection-start-column="40" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -607,6 +640,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/model/MyJsoup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/model/MyTika.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example-frontend/src/container/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -617,10 +687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/PongController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springbootwithreactjs/controller/MyRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
