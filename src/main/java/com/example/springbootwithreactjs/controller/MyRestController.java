@@ -16,7 +16,7 @@ public class MyRestController {
 
   @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
   @CrossOrigin(origins = "http://localhost:3000")
-  public String urlSubmitted(WebRequest request){
+  public boolean urlSubmitted(WebRequest request){
     System.out.println(request.getParameter("suggest"));
     BasicDBObject toInsert = new BasicDBObject();
     URL url = null;
@@ -27,7 +27,6 @@ public class MyRestController {
     }
     toInsert.append(MongoDB.URL, request.getParameter("suggest"));
     //MongoDB.getInstance().addBasicDBObject(toInsert);
-    MyTika.getInstance().validSchoolUrl(url);
-    return "Success";
+    return MyTika.getInstance().validSchoolUrl(url);
   }
 }

@@ -6,8 +6,14 @@ import SchoolUrl from "./SchoolUrl";
 
 function DisplaySchool(props){
     const websiteChecked = props.websiteChecked;
+    const validSchoolUrl = props.validSchoolUrl;
+    console.log(`validSchoolUrl is ${validSchoolUrl}`);
     if(websiteChecked){
-        return <SchoolChecker/>;
+        if(validSchoolUrl == true){
+            return <SchoolChecker message={'Valid school url entered'}/>;
+        }else {
+            return <SchoolChecker message={'InValid school url entered, please try again.'}/>;
+        }
     }
     return null;
 }
@@ -19,6 +25,7 @@ class AddSchool extends Component{
             websiteChecked: false,
             schoolChecked: false,
             value: [],
+            validSchoolUrl: false,
         };
         this.onUpdate = this.onUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +46,11 @@ class AddSchool extends Component{
             url: "http://localhost:8080/urlsubmitted",
             data: {suggest: this.state.value},
             success: function(msg){
-                self.setState({websiteChecked: true});
+                console.log(`incoming message is ${msg}`);
+                self.setState({
+                    websiteChecked: true,
+                    validSchoolUrl: msg,
+                });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
                 alert(`There was an error processing request: ${errorThrown}`);
@@ -52,7 +63,7 @@ class AddSchool extends Component{
         return(
             <div>
                 <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
-                <DisplaySchool websiteChecked={this.state.websiteChecked}/>
+                <DisplaySchool websiteChecked={this.state.websiteChecked} validSchoolUrl={this.state.validSchoolUrl}/>
             </div>
         );
     };
