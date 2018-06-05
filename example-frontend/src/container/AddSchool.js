@@ -4,6 +4,14 @@ import $ from "jquery";
 import SchoolChecker from "./SchoolChecker";
 import SchoolUrl from "./SchoolUrl";
 
+function DisplaySchool(props){
+    const websiteChecked = props.websiteChecked;
+    if(websiteChecked){
+        return <SchoolChecker/>;
+    }
+    return null;
+}
+
 class AddSchool extends Component{
     constructor(props){
         super(props);
@@ -43,7 +51,7 @@ class AddSchool extends Component{
         return(
             <div>
                 <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
-                <SchoolChecker hasWebsiteBeenChecked={this.state.websiteChecked}/>
+                <DisplaySchool websiteChecked={this.state.websiteChecked}/>
             </div>
         );
     };

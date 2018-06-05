@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Tester from './Tester';
 import Searchbar from './Searchbar';
 import About from './About';
 import AddSchool from "./AddSchool";
