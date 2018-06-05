@@ -42,6 +42,10 @@ public class MongoDB {
         coll.insert(temp);
     }
 
+    public void addBasicDBObject(BasicDBObject objectToInsert){
+        coll.insert(objectToInsert);
+    }
+
     /*Have to add logic where if it is a about page, has a location, or has pictures
     this app will take that information and do as necessary for whatever is needed
     */

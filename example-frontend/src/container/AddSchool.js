@@ -26,7 +26,8 @@ class AddSchool extends Component{
 
     onUpdate = (val) => {
         this.setState({
-            value: val
+            value: val,
+            websiteChecked: false
         })
     };
 

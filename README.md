@@ -7,3 +7,9 @@ Simple web app that takes school related websites, and retrieves important infor
 - Programs
 - Key Staff Members
 - Departments
+
+Requirements to run:
+- Maven
+- Node.js
+- MongoDB
+
