@@ -7,7 +7,7 @@ import Loader from "./Loader";
 
 function DisplayLoader(props){
     if(props.renderLoader == true){
-        return <Loader />;
+        return <Loader onMount={props.onMount}/>;
     }
     else {
         return null;
@@ -39,6 +39,7 @@ class AddSchool extends Component{
         };
         this.onUpdate = this.onUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.parseSchoolPage = this.parseSchoolPage.bind(this);
     }
 
     onUpdate = (val) => {
@@ -47,6 +48,22 @@ class AddSchool extends Component{
             websiteChecked: false
         })
     };
+
+    parseSchoolPage(){
+        console.log('HELLO PARSE SCHOOL PAGE REACHED');
+        const self = this;
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/urlToParse",
+            data: {urlToParse: this.state.value},
+            success: function(msg){
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+
+            }
+        });
+    }
 
     handleSubmit(event){
         console.log('submit button pressed');
@@ -82,7 +99,7 @@ class AddSchool extends Component{
             <div>
                 <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
                 <DisplaySchool websiteChecked={this.state.websiteChecked} validSchoolUrl={this.state.validSchoolUrl}/>
-                <DisplayLoader renderLoader={this.state.renderLoader}/>
+                <DisplayLoader renderLoader={this.state.renderLoader} onMount={this.parseSchoolPage}/>
             </div>
         );
     };

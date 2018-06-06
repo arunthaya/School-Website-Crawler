@@ -8,25 +8,33 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 /**
  */
 @RestController
 public class MyRestController {
 
-  @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
-  @CrossOrigin(origins = "http://localhost:3000")
-  public boolean urlSubmitted(WebRequest request){
-    System.out.println(request.getParameter("suggest"));
-    BasicDBObject toInsert = new BasicDBObject();
-    URL url = null;
-    try{
-      url = new URL(request.getParameter("suggest"));
-    } catch(MalformedURLException e1){
-      e1.printStackTrace();
+    @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean urlSubmitted(WebRequest request){
+        System.out.println(request.getParameter("suggest"));
+        BasicDBObject toInsert = new BasicDBObject();
+        URL url = null;
+        try{
+            url = new URL(request.getParameter("suggest"));
+        } catch(MalformedURLException e1){
+            e1.printStackTrace();
+        }
+        toInsert.append(MongoDB.URL, request.getParameter("suggest"));
+        //MongoDB.getInstance().addBasicDBObject(toInsert);
+        return MyTika.getInstance().validSchoolUrl(url);
     }
-    toInsert.append(MongoDB.URL, request.getParameter("suggest"));
-    //MongoDB.getInstance().addBasicDBObject(toInsert);
-    return MyTika.getInstance().validSchoolUrl(url);
-  }
+
+    @RequestMapping(value = "/urlToParse", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public HashMap<String, String> urlParsed(WebRequest request){
+        return null;
+    }
+
 }
