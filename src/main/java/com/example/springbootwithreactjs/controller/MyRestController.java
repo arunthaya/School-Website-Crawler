@@ -33,14 +33,18 @@ public class MyRestController {
 
     @RequestMapping(value = "/urlToParse", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:3000")
-    public HashMap<String, String> urlParsed(WebRequest request){
+    public String urlParsed(WebRequest request){
+        String aboutUsPage = "";
+        System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
         System.out.println("request coming in for Urltoparse is "+request.getParameter("urlToParse"));
         try {
-            MyCrawlController.getInstance(request.getParameter("urlToParse")).crawl();
+            aboutUsPage = MyCrawlController.getInstance(request.getParameter("urlToParse")).crawl();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        System.out.println("length of aboutus page: " + aboutUsPage.length() + " about us page after " + aboutUsPage + "");
+        System.out.println("control flow returned to Java- Spring");
+        return aboutUsPage;
     }
 
 }

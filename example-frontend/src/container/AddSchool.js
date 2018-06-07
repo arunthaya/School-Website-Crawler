@@ -4,6 +4,7 @@ import $ from "jquery";
 import SchoolChecker from "./SchoolChecker";
 import SchoolUrl from "./SchoolUrl";
 import Loader from "./Loader";
+import SchoolPageCrawled from "./SchoolPageCrawled";
 
 function DisplayLoader(props){
     if(props.renderLoader == true){
@@ -35,7 +36,10 @@ class AddSchool extends Component{
             schoolChecked: false,
             value: [],
             validSchoolUrl: false,
-            renderLoader: false
+            renderLoader: false,
+            renderAboutUsPage: false,
+            aboutUsPageData: " ",
+            schoolName: " "
         };
         this.onUpdate = this.onUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,6 +53,12 @@ class AddSchool extends Component{
         })
     };
 
+    onAboutSchoolUpdate = (val) => {
+        this.setState({
+            aboutUsPageData: val,
+        })
+    };
+
     parseSchoolPage(){
         console.log('HELLO PARSE SCHOOL PAGE REACHED');
         const self = this;
@@ -58,6 +68,12 @@ class AddSchool extends Component{
             data: {urlToParse: this.state.value},
             success: function(msg){
                 console.log('success putting it to server');
+                console.log(`incoming message is: ${msg}`);
+                self.setState({
+                    renderLoader: false,
+                    renderAboutUsPage: true,
+                    aboutUsPageData: msg.toString()
+                });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
                 alert('error');
@@ -100,6 +116,7 @@ class AddSchool extends Component{
                 <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
                 <DisplaySchool websiteChecked={this.state.websiteChecked} validSchoolUrl={this.state.validSchoolUrl}/>
                 <DisplayLoader renderLoader={this.state.renderLoader} onMount={this.parseSchoolPage}/>
+                <SchoolPageCrawled onUpdate={this.onAboutSchoolUpdate} titleOfPage={this.state.schoolName} aboutPageContent={this.state.aboutUsPageData}/>
             </div>
         );
     };

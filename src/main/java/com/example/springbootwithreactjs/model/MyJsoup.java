@@ -42,6 +42,23 @@ public class MyJsoup {
         }
     }
 
+    public String getParagraphSelector(String urlString){
+        Document doc;
+        String paragraphsOnPage = "";
+        try{
+            doc = Jsoup.connect(urlString).get();
+            Elements paragraphs =  doc.select("p");
+            for(Element paragraph: paragraphs){
+                paragraphsOnPage += paragraph.text();
+                System.out.println("paragraph is: "+paragraph);
+            }
+        } catch(IOException e1){
+            e1.printStackTrace();
+        }
+        System.out.println("paragraphs on page is " + paragraphsOnPage);
+        return paragraphsOnPage;
+    }
+
     public static Map<String, String> getUrlAltMapForImgs() {
         return altMapForImgs;
     }
