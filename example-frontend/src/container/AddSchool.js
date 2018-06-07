@@ -57,10 +57,10 @@ class AddSchool extends Component{
             url: "http://localhost:8080/urlToParse",
             data: {urlToParse: this.state.value},
             success: function(msg){
-
+                console.log('success putting it to server');
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-
+                alert('error');
             }
         });
     }

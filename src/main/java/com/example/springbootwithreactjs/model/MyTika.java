@@ -62,13 +62,33 @@ public class MyTika {
             int titleParsed = StringHelperClass.validSchoolUrlChecker(metadata.get("title"));
             int metaParsed = StringHelperClass.validSchoolUrlChecker(metadata.toString());
             if(urlParsed > 0 || titleParsed > 0 || metaParsed > 0){
-                System.out.println("Valid school url was entered");
                 return true;
             }
         } catch (Exception e){
             e.printStackTrace();
         }
-        System.out.println("Not a valid school url");
         return false;
     }
+
+    public boolean validAboutUsPage(URL url){
+        try{
+            System.out.println("currently checking if it is about us page ");
+            parser = new AutoDetectParser();
+            metadata = new Metadata();
+            InputStream input = TikaInputStream.get(url, metadata);
+            BodyContentHandler handler = new BodyContentHandler(2000000);
+            parser.parse(input, handler, metadata, context);
+            int urlParsed = StringHelperClass.aboutPageChecker(url.toString());
+            int titleParsed = StringHelperClass.aboutPageChecker(metadata.get("title"));
+            int metaParsed = StringHelperClass.aboutPageChecker(metadata.toString());
+            System.out.println("    the numbers are as follows: " + urlParsed + " " + titleParsed + " " +metaParsed);
+            if(urlParsed > 0 || titleParsed > 0 || metaParsed > 0){
+                return true;
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
