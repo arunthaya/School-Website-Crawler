@@ -122,6 +122,7 @@ class AddSchool extends Component{
     };
 }
 
+//TODO - ADD other functionality for other segments of the University Page, including pictures and text boxes for the person to edit
 //add modal dialogue that will open up upon submission from tester, start off with the loading icon, then show the dialog, once they close it will run something else
 //send all information up from tester back up to add school
 //this will turn on school checker as needed

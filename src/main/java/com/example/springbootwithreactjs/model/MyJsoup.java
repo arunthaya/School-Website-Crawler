@@ -59,6 +59,7 @@ public class MyJsoup {
         return paragraphsOnPage;
     }
 
+    //Todo - add logic to grab images, and only the most relevant sentences for the about page
     public static Map<String, String> getUrlAltMapForImgs() {
         return altMapForImgs;
     }

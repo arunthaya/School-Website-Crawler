@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import '../css/SchoolPageCrawled.css';
-import $ from "jquery";
 
 class SchoolPageCrawled extends Component{
     constructor(props){
         super(props);
         this.state = {
-            inputValue: " "
+            inputValue: props.aboutPageContent
         };
         this.handleChange = this.handleChange.bind(this);
     }
 
-    componentDidMount(){
-        this.setState({
-            inputValue: this.props.aboutPageContent
-        })
-    }
+    /* TODO - look into component life cycles
+ componentDidMount(){
+         //     this.setState({
+         //         inputValue: this.props.aboutPageContent
+         //     });
+         // }
+*/
 
     handleChange(e){
         this.props.onUpdate(e.target.value);
@@ -27,7 +28,7 @@ class SchoolPageCrawled extends Component{
             <div id="about">
                 <h1>{}</h1>
                 <p>{this.props.aboutPageContent}</p>
-                <input defaultValue={this.props.aboutPageContent} value={this.state.inputValue} onChange={this.handleChange}></input>
+                <input value={this.state.inputValue} onChange={this.handleChange}></input>
             </div>
         );
     }
