@@ -42,6 +42,8 @@ public class MyJsoup {
         }
     }
 
+
+
     public String getParagraphSelector(String urlString){
         Document doc;
         String paragraphsOnPage = "";
@@ -49,8 +51,16 @@ public class MyJsoup {
             doc = Jsoup.connect(urlString).get();
             Elements paragraphs =  doc.select("p");
             for(Element paragraph: paragraphs){
-                paragraphsOnPage += paragraph.text();
+                String paragraphChecker = paragraph.toString();
+                if(paragraph.hasAttr("class") || paragraphChecker.contains("href") || paragraphChecker.contains("<a")) {
+                    System.out.println("skipping paragraph " + paragraph.toString());
+                    continue;
+                }
                 System.out.println("paragraph is: "+paragraph);
+                System.out.println("paragraph as a string is "+paragraph.toString());
+                paragraphsOnPage += paragraph.text();
+                String validSentence = paragraph.text();
+                String[] words = validSentence.split(" ");
             }
         } catch(IOException e1){
             e1.printStackTrace();

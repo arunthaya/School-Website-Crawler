@@ -34,7 +34,7 @@ public class MyTika {
         }
     }
 
-    public void store(URL url, BasicDBObject MongoDoc){
+    public String store(URL url, BasicDBObject MongoDoc){
         System.out.println("Url entered was: "+url);
         try {
             parser = new AutoDetectParser();
@@ -46,9 +46,11 @@ public class MyTika {
             MongoDoc.append("contentofpage", handler.toString());
             MongoDoc.append("metadata", metadata.toString());
             input.close();
+            return metadata.get("title");
         } catch (Exception e){
             e.printStackTrace();
         }
+        return null;
     }
 
     public boolean validSchoolUrl(URL url){

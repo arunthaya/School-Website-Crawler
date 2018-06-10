@@ -2,7 +2,9 @@ package com.example.springbootwithreactjs.controller;
 
 import com.example.springbootwithreactjs.database.MongoDB;
 import com.example.springbootwithreactjs.model.MyTika;
+import com.google.gson.JsonObject;
 import com.mongodb.BasicDBObject;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
@@ -34,17 +36,17 @@ public class MyRestController {
     @RequestMapping(value = "/urlToParse", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:3000")
     public String urlParsed(WebRequest request){
-        String aboutUsPage = "";
-        System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
+        JsonObject responseObj = new JsonObject();
+        //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
         System.out.println("request coming in for Urltoparse is "+request.getParameter("urlToParse"));
         try {
-            aboutUsPage = MyCrawlController.getInstance(request.getParameter("urlToParse")).crawl();
+            MyCrawlController.getInstance(request.getParameter("urlToParse")).crawl(responseObj);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("length of aboutus page: " + aboutUsPage.length() + " about us page after " + aboutUsPage + "");
+        //System.out.println("length of aboutus page: " + aboutUsPage.length() + " about us page after " + aboutUsPage + "");
         System.out.println("control flow returned to Java- Spring");
-        return aboutUsPage;
+        return responseObj.toString();
     }
 
 }

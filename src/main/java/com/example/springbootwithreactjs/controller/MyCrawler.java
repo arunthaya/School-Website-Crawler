@@ -18,6 +18,7 @@ public class MyCrawler extends WebCrawler {
     private Date startTime;
     private Date endTime;
     private static String paragraphs = "";
+    private static String schoolName = "";
 
     private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|bmp|vcf|ico" + "|mid|mp2|mp3|mp4"
             + "|wav|avi|mov|mpeg|ram|m4v" + "|rm|smil|wmv|swf|wma|zip|rar|gz))$");
@@ -59,7 +60,7 @@ public class MyCrawler extends WebCrawler {
         absoluteAboutPage += "/about";
         if(aboutUsPage && (aboutPageToCompare.equals(absoluteAboutPage))){
             System.out.println("Found a valid about us page");
-            MyTika.getInstance().store(url,pageToStore);
+            schoolName = MyTika.getInstance().store(url,pageToStore);
             paragraphs = MyJsoup.getInstance().getParagraphSelector(page.getWebURL().getURL());
             MongoDB.getInstance().addBasicDBObject(pageToStore);
         }
@@ -69,7 +70,7 @@ public class MyCrawler extends WebCrawler {
         return paragraphs;
     }
 
-
+    public static String getTitle() { return schoolName; }
 
 }
 

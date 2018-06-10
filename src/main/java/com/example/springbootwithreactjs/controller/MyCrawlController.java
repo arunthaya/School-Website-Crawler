@@ -1,10 +1,13 @@
 package com.example.springbootwithreactjs.controller;
 
+import com.google.gson.JsonObject;
 import edu.uci.ics.crawler4j.crawler.CrawlConfig;
 import edu.uci.ics.crawler4j.crawler.CrawlController;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
+
+import java.util.HashMap;
 
 public class MyCrawlController {
 
@@ -22,7 +25,7 @@ public class MyCrawlController {
         return instance;
     }
 
-    public static String crawl() throws Exception {
+    public static void crawl(JsonObject response) throws Exception {
         String crawlStorageFolder = "~/crawlStorage";
         int numberOfCrawlers = 10;
 
@@ -37,7 +40,8 @@ public class MyCrawlController {
         /*CrawlConfig config for testing */
         config.setCrawlStorageFolder(crawlStorageFolder);
         config.setPolitenessDelay(10);
-        config.setMaxPagesToFetch(500);
+        config.setMaxPagesToFetch(1000);
+        config.setMaxDepthOfCrawling(3);
         config.setIncludeHttpsPages(true);
         config.setResumableCrawling(false);
         config.setIncludeBinaryContentInCrawling(false);
@@ -49,7 +53,8 @@ public class MyCrawlController {
 
         controller.addSeed(SEED1);
         controller.start(MyCrawler.class, numberOfCrawlers);
-        return MyCrawler.getParagraphs();
+        response.addProperty("aboutData", MyCrawler.getParagraphs());
+        response.addProperty("aboutTitle", MyCrawler.getTitle());
     }
 
 }

@@ -5,6 +5,8 @@ import SchoolChecker from "./SchoolChecker";
 import SchoolUrl from "./SchoolUrl";
 import Loader from "./Loader";
 import SchoolPageCrawled from "./SchoolPageCrawled";
+import Searchbar from "./Searchbar";
+var response;
 
 function DisplayLoader(props){
     if(props.renderLoader == true){
@@ -39,7 +41,7 @@ class AddSchool extends Component{
             renderLoader: false,
             renderAboutUsPage: false,
             aboutUsPageData: " ",
-            schoolName: " "
+            aboutUsPageTitle: " "
         };
         this.onUpdate = this.onUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -69,10 +71,20 @@ class AddSchool extends Component{
             success: function(msg){
                 console.log('success putting it to server');
                 console.log(`incoming message is: ${msg}`);
+                console.log(`incoming message parsed is ${JSON.parse(msg)}`);
+                console.log(`the jokes is ${msg.jokes}`);
+                console.log(`${msg.links}`);
+                response = msg;
+                response = JSON.parse(response);
+                //console.log(JSON.parse(response));
+                console.log(response.links);
+                console.log(response.name);
+                // console.log(response.)
                 self.setState({
                     renderLoader: false,
                     renderAboutUsPage: true,
-                    aboutUsPageData: msg.toString()
+                    aboutUsPageData: response.aboutData,
+                    aboutUsPageTitle: response.aboutTitle,
                 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -116,7 +128,7 @@ class AddSchool extends Component{
                 <SchoolUrl onUpdate={this.onUpdate} handleSubmit={this.handleSubmit}/>
                 <DisplaySchool websiteChecked={this.state.websiteChecked} validSchoolUrl={this.state.validSchoolUrl}/>
                 <DisplayLoader renderLoader={this.state.renderLoader} onMount={this.parseSchoolPage}/>
-                <SchoolPageCrawled onUpdate={this.onAboutSchoolUpdate} titleOfPage={this.state.schoolName} aboutPageContent={this.state.aboutUsPageData}/>
+                <SchoolPageCrawled onUpdate={this.onAboutSchoolUpdate} titleOfPage={this.state.aboutUsPageTitle} aboutPageContent={this.state.aboutUsPageData}/>
             </div>
         );
     };
