@@ -31,9 +31,9 @@ public class MongoDB {
         Mongo mongo = new MongoClient("localhost");
         db = mongo.getDB(DB_NAME);
         coll = db.getCollection(COLLECTION_NAME);
-        BasicDBObject temp = new BasicDBObject();
-        temp.append("hi", "helloWorld");
-        coll.insert(temp);
+//        BasicDBObject temp = new BasicDBObject();
+//        temp.append("hi", "helloWorld");
+//        coll.insert(temp);
     }
 
     public void add(String page){

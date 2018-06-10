@@ -1,5 +1,6 @@
 package com.example.springbootwithreactjs.controller;
 
+import com.example.springbootwithreactjs.model.MyJsoup;
 import com.google.gson.JsonObject;
 import edu.uci.ics.crawler4j.crawler.CrawlConfig;
 import edu.uci.ics.crawler4j.crawler.CrawlController;
@@ -27,7 +28,7 @@ public class MyCrawlController {
 
     public static void crawl(JsonObject response) throws Exception {
         String crawlStorageFolder = "~/crawlStorage";
-        int numberOfCrawlers = 10;
+        int numberOfCrawlers = 3;
 
         CrawlConfig config = new CrawlConfig();
 //        config.setCrawlStorageFolder(crawlStorageFolder);
@@ -40,8 +41,9 @@ public class MyCrawlController {
         /*CrawlConfig config for testing */
         config.setCrawlStorageFolder(crawlStorageFolder);
         config.setPolitenessDelay(10);
-        config.setMaxPagesToFetch(1000);
-        config.setMaxDepthOfCrawling(3);
+        //TODO - CHANGE THIS TO 1000
+        config.setMaxPagesToFetch(10);
+        config.setMaxDepthOfCrawling(1);
         config.setIncludeHttpsPages(true);
         config.setResumableCrawling(false);
         config.setIncludeBinaryContentInCrawling(false);
@@ -55,6 +57,9 @@ public class MyCrawlController {
         controller.start(MyCrawler.class, numberOfCrawlers);
         response.addProperty("aboutData", MyCrawler.getParagraphs());
         response.addProperty("aboutTitle", MyCrawler.getTitle());
+        response.addProperty("images", MyJsoup.getInstance().getImageArrayJson().toString());
+        //response.add("images", MyJsoup.getInstance().getImages());
+        //System.out.println(MyJsoup.getInstance().getImages().toString());
     }
 
 }

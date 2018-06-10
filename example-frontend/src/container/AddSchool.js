@@ -6,7 +6,6 @@ import SchoolUrl from "./SchoolUrl";
 import Loader from "./Loader";
 import SchoolPageCrawled from "./SchoolPageCrawled";
 import Searchbar from "./Searchbar";
-var response;
 
 function DisplayLoader(props){
     if(props.renderLoader == true){
@@ -69,17 +68,27 @@ class AddSchool extends Component{
             url: "http://localhost:8080/urlToParse",
             data: {urlToParse: this.state.value},
             success: function(msg){
-                console.log('success putting it to server');
-                console.log(`incoming message is: ${msg}`);
-                console.log(`incoming message parsed is ${JSON.parse(msg)}`);
-                console.log(`the jokes is ${msg.jokes}`);
-                console.log(`${msg.links}`);
-                response = msg;
-                response = JSON.parse(response);
-                //console.log(JSON.parse(response));
-                console.log(response.links);
-                console.log(response.name);
-                // console.log(response.)
+                let response = JSON.parse(msg);
+                // console.log(`response from server is ${response}`);
+                // console.log(`response from server stringified is ${response.toString()}`);
+                let imageUrls;
+                imageUrls = response.images;
+                imageUrls = imageUrls.replace(/[\[\]']+/g,'');
+                let tempTest = {};
+                tempTest = imageUrls.toString();
+                let individualImageUrls = tempTest.split(",");
+                for(let i=0; i<individualImageUrls.length; i++){
+                    let tempString3000 = JSON.parse(individualImageUrls[i]);
+                    console.log(`tempString3000 url is ${tempString3000.url}`);
+                    individualImageUrls[i] = JSON.parse(individualImageUrls[i]);
+                    console.log(`individualImageUrl.url at ${i} is -> ${individualImageUrls[i].url}`);
+                }
+                // console.log(`imageUrls from server is ${imageUrls.toString()}`);
+                console.log(`imageUrls from server without .toString() method is ${imageUrls}`);
+                //console.log(`3rd element from images is ${imageUrls[2]}`);
+                // let temp;
+                // temp = JSON.parse(imageUrls);
+                //console.log(`imageUrls json.parsed is ${temp}`)
                 self.setState({
                     renderLoader: false,
                     renderAboutUsPage: true,

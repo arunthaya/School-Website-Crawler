@@ -26,7 +26,7 @@ public class MyTika {
     }
 
     private MyTika(){
-        System.out.println("entered MyTika and created an instance of it");
+        //System.out.println("entered MyTika and created an instance of it");
         try{
             context = new ParseContext();
         } catch (Exception e){
@@ -35,7 +35,7 @@ public class MyTika {
     }
 
     public String store(URL url, BasicDBObject MongoDoc){
-        System.out.println("Url entered was: "+url);
+        //System.out.println("Url entered was: "+url);
         try {
             parser = new AutoDetectParser();
             metadata = new Metadata();
@@ -74,7 +74,7 @@ public class MyTika {
 
     public boolean validAboutUsPage(URL url){
         try{
-            System.out.println("currently checking if it is about us page ");
+            //System.out.println("currently checking if it is about us page ");
             parser = new AutoDetectParser();
             metadata = new Metadata();
             InputStream input = TikaInputStream.get(url, metadata);
@@ -83,7 +83,7 @@ public class MyTika {
             int urlParsed = StringHelperClass.aboutPageChecker(url.toString());
             int titleParsed = StringHelperClass.aboutPageChecker(metadata.get("title"));
             int metaParsed = StringHelperClass.aboutPageChecker(metadata.toString());
-            System.out.println("    the numbers are as follows: " + urlParsed + " " + titleParsed + " " +metaParsed);
+            //System.out.println("    the numbers are as follows: " + urlParsed + " " + titleParsed + " " +metaParsed);
             if(urlParsed > 0 || titleParsed > 0 || metaParsed > 0){
                 return true;
             }
