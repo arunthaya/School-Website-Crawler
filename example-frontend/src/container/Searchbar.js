@@ -74,30 +74,21 @@ class Searchbar extends Component {
 
     cardHandleClick(e){
         const selfCard = this;
-        console.log(`hello from thhe searchbar ${e}`);
-        console.log(`tempArr is ${selfCard.state.importantInfo}`);
         let msg = selfCard.state.importantInfo;
         let tempArray = JSON.parse(msg);
-        console.log(tempArray);
-        console.log(selfCard.state.val);
-        console.log(`type of object ${typeof selfCard.state.val} + length ${selfCard.state.val.length}`);
         let imagesArray;
         let imagesToRenderTemp = [];
         for(let i in tempArray) {
             console.log(`e is ${e} , tempArray.title at ${i} is ${tempArray[i].aboutTitle}`);
-            if(e.localeCompare(tempArray[i].aboutTitle)) {
+            if(e == tempArray[i].aboutTitle) {
+                console.log(`found a match`);
                 tempArray[i].images = JSON.parse(tempArray[i].images);
                 tempArray[i].images = tempArray[i].images.substr(1, tempArray[i].images.length - 1);
                 imagesArray = tempArray[i].images;
-                console.log(`type of object for imagesArray is ${typeof imagesArray}`);
                 let tempString = imagesArray.split(",");
-                console.log(`tempString's length is ${tempString.length}`);
-                console.log(`imagesArray is ${tempString}`);
                 let urlArray = [];
                 for(let j in tempString){
                     urlArray[i] = JSON.parse(tempString[i]);
-                    console.log(urlArray[i]);
-                    console.log(`parsed is ${JSON.parse(tempString[i])}`);
                     let tempJSObject = {};
                     tempJSObject.src = urlArray[i].url;
                     tempJSObject.thumbnail = urlArray[i].url;
