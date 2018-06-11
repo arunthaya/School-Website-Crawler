@@ -1,10 +1,12 @@
 package com.example.springbootwithreactjs.database;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mongodb.*;
 
 import java.net.UnknownHostException;
+import java.util.List;
 
 public class MongoDB {
 
@@ -60,6 +62,25 @@ public class MongoDB {
         temp.append("aboutTitle", aboutTitle.toString());
         temp.append("images", imageData.toString());
         parsedColl.insert(temp);
+    }
+
+    public JsonElement queryFinalSchoolPages(){
+        JsonArray listOfSchools = new JsonArray();
+        DBCursor cursor = parsedColl.find();
+        List<DBObject> schoolsParsed = cursor.toArray();
+        for(DBObject school:schoolsParsed){
+            JsonObject schoolCurrent = new JsonObject();
+            schoolCurrent.addProperty("aboutTitle", school.get("aboutTitle").toString());
+            schoolCurrent.addProperty("aboutData", school.get("about").toString());
+            schoolCurrent.addProperty("images", school.get("images").toString());
+//            System.out.println("attempting to print out school title");
+//            System.out.println(school.get("aboutTitle"));
+//            System.out.println("done school title print out");
+//            System.out.println(school);
+            //listOfSchools.add(school.get("aboutTitle").toString(), schoolCurrent);
+            listOfSchools.add(schoolCurrent);
+        }
+        return listOfSchools;
     }
     /*Have to add logic where if it is a about page, has a location, or has pictures
     this app will take that information and do as necessary for whatever is needed

@@ -55,4 +55,10 @@ public class MyRestController {
         return responseObj.toString();
     }
 
+    @RequestMapping(value = "/school_list", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String finalSchoolRetrieval(){
+        return MongoDB.getInstance().queryFinalSchoolPages().toString();
+    }
+
 }

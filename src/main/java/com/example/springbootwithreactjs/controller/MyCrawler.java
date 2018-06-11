@@ -60,6 +60,9 @@ public class MyCrawler extends WebCrawler {
             absoluteAboutPage = absoluteAboutPage.substring(0,absoluteAboutPage.length() - 1);
         }
         absoluteAboutPage += "/about";
+        if(MyCrawlController.SEED1.contains("utoronto")) {
+            absoluteAboutPage += "-u-of-t";
+        }
         if(aboutUsPage && (aboutPageToCompare.equals(absoluteAboutPage))){
             System.out.println("Found a valid about us page");
             schoolName = MyTika.getInstance().store(url,pageToStore);
