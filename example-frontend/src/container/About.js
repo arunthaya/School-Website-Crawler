@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 
+//todo - spice up this page and make it parallax
 const About = () => (
     <div>
         <h1>Welcome!</h1>
@@ -16,3 +17,4 @@ const About = () => (
 );
 
 export default About;
+//--todo eventually look into adding css media queries to adapt to different screen sizes

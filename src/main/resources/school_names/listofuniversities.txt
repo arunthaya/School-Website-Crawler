@@ -1,0 +1,97 @@
+Athabasca University
+Concordia University of Edmonton
+King’s University (The)
+MacEwan University
+Mount Royal University
+University of Alberta
+University of Calgary
+University of Lethbridge
+Emily Carr University of Art + Design
+Kwantlen Polytechnic University
+Royal Roads University
+Simon Fraser University
+Thompson Rivers University
+Trinity Western University
+University of British Columbia (The)
+University of Northern British Columbia
+University of the Fraser Valley
+University of Victoria
+Vancouver Island University
+Brandon University
+Canadian Mennonite University
+St. Paul’s College
+Université de Saint-Boniface
+University of Manitoba
+University of Winnipeg (The)
+Mount Allison University
+St. Thomas University
+Université de Moncton
+University of New Brunswick
+Acadia University
+Cape Breton University
+Dalhousie University
+Mount Saint Vincent University
+NSCAD University
+Saint Mary’s University
+St. Francis Xavier University
+Université Sainte-Anne
+University of King’s College
+Memorial University of Newfoundland
+Algoma University
+Brescia University College
+Brock University
+Carleton University
+Huron University College
+King’s University College at Western University
+Lakehead University
+Laurentian University
+McMaster University
+Nipissing University
+OCAD University
+Queen’s University
+Redeemer University College
+Royal Military College of Canada
+Ryerson University
+Saint Paul University
+St. Jerome’s University
+Trent University
+University of Guelph
+University of Ontario Institute of Technology
+University of Ottawa
+University of St. Michael’s College
+University of Sudbury
+University of Toronto
+University of Trinity College
+University of Waterloo
+University of Windsor
+Victoria University
+Western University
+Wilfrid Laurier University
+York University
+Prince Edward Island
+University of Prince Edward Island
+Bishop’s University
+Concordia University
+École de technologie supérieure
+École nationale d’administration publique
+HEC Montréal
+Institut national de la recherche scientifique
+McGill University
+Polytechnique Montréal
+Université de Montréal
+Université de Sherbrooke
+Université du Québec
+Université du Québec à Chicoutimi (UQAC)
+Université du Québec à Montréal (UQAM)
+Université du Québec à Rimouski (UQAR)
+Université du Québec à Trois-Rivières (UQTR)
+Université du Québec en Abitibi-Témiscamingue (UQAT)
+Université du Québec en Outaouais
+Université Laval
+Université TÉLUQ
+Campion College
+First Nations University of Canada
+Luther College
+St. Thomas More College
+University of Regina
+University of Saskatchewan
