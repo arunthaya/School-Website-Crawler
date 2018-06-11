@@ -2,12 +2,15 @@ package com.example.springbootwithreactjs.controller;
 
 import com.example.springbootwithreactjs.database.MongoDB;
 import com.example.springbootwithreactjs.model.MyTika;
+import com.example.springbootwithreactjs.model.StringHelperClass;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mongodb.BasicDBObject;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
+import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -16,6 +19,8 @@ import java.util.HashMap;
  */
 @RestController
 public class MyRestController {
+
+    private JsonArray schools;
 
     @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:3000")
@@ -40,7 +45,8 @@ public class MyRestController {
         //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
         System.out.println("request coming in for Urltoparse is "+request.getParameter("urlToParse"));
         try {
-            MyCrawlController.getInstance(request.getParameter("urlToParse")).crawl(responseObj);
+            MyCrawlController toCrawl = new MyCrawlController(request.getParameter("urlToParse"));
+            toCrawl.crawl(responseObj);
         } catch (Exception e) {
             e.printStackTrace();
         }

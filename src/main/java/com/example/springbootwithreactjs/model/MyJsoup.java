@@ -39,9 +39,13 @@ public class MyJsoup {
     /*add logic to grab urls for images and grab relevant paragraphs about the website and only grabbing paragraphs from the page
         checks the url for absolutes, and if it is an about page absolutely then it will grab all necessary information
     */
-    private MyJsoup(){
+    public MyJsoup(){
         altMapForImgs = new HashMap<String, String>();
         images = new ArrayList<>();
+        imageArrayJson = new JsonArray();
+    }
+
+    public void resetImageArrayJson(){
         imageArrayJson = new JsonArray();
     }
 
@@ -63,7 +67,8 @@ public class MyJsoup {
                     images.add(imageUrl);
                     JsonObject imageJson = new JsonObject();
                     imageJson.addProperty("url", imageUrl);
-                    imageArrayJson.add(imageJson);
+                    if(imageArrayJson.size() <= 500)
+                        imageArrayJson.add(imageJson);
                 }
             }
         } catch(IOException e1){
@@ -81,15 +86,16 @@ public class MyJsoup {
             Elements paragraphs =  doc.select("p");
             for(Element paragraph: paragraphs){
                 String paragraphChecker = paragraph.toString();
+                System.out.println("paragraphChecker is "+paragraphChecker);
                 if(paragraphChecker.contains("href") || paragraphChecker.contains("<a")) {
                     //System.out.println("skipping paragraph " + paragraph.toString());
                     continue;
                 }
-                //System.out.println("paragraph is: "+paragraph);
+                System.out.println("paragraph is: "+paragraph);
                 //System.out.println("paragraph as a string is "+paragraph.toString());
-                paragraphsOnPage += paragraph.text();
                 String validSentence = paragraph.text();
                 String[] words = validSentence.split(" ");
+                paragraphsOnPage += paragraph.text();
             }
         } catch(IOException e1){
             e1.printStackTrace();

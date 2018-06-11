@@ -5,10 +5,23 @@ import SchoolChecker from "./SchoolChecker";
 import SchoolUrl from "./SchoolUrl";
 import Loader from "./Loader";
 import SchoolPageCrawled from "./SchoolPageCrawled";
+import Gallery from 'react-grid-gallery';
 import Searchbar from "./Searchbar";
 
+function DisplayImages(props){
+    if(props.renderImages == true){
+        return(
+            <div id="images">
+                <h1>Images from {props.titleOfPage}</h1>
+                <Gallery images={props.imagesToRender}/>
+            </div>
+        );
+    }
+    return null;
+}
+
 function DisplayLoader(props){
-    if(props.renderLoader == true){
+    if(props.renderLoader){
         return <Loader onMount={props.onMount}/>;
     }
     else {
@@ -40,7 +53,9 @@ class AddSchool extends Component{
             renderLoader: false,
             renderAboutUsPage: false,
             aboutUsPageData: " ",
-            aboutUsPageTitle: " "
+            aboutUsPageTitle: " ",
+            renderImages: false,
+            imagesToRender: [],
         };
         this.onUpdate = this.onUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +65,12 @@ class AddSchool extends Component{
     onUpdate = (val) => {
         this.setState({
             value: val,
-            websiteChecked: false
+            websiteChecked: false,
+            aboutUsPageData: " ",
+            aboutUsPageTitle: " ",
+            imagesToRender: [],
+            renderImages: false,
+            renderAboutUsPage: false
         })
     };
 
@@ -77,11 +97,18 @@ class AddSchool extends Component{
                 let tempTest = {};
                 tempTest = imageUrls.toString();
                 let individualImageUrls = tempTest.split(",");
+                let imagesToRenderTemp = [];
                 for(let i=0; i<individualImageUrls.length; i++){
                     let tempString3000 = JSON.parse(individualImageUrls[i]);
                     console.log(`tempString3000 url is ${tempString3000.url}`);
                     individualImageUrls[i] = JSON.parse(individualImageUrls[i]);
                     console.log(`individualImageUrl.url at ${i} is -> ${individualImageUrls[i].url}`);
+                    let tempJSObject = {};
+                    tempJSObject.src = individualImageUrls[i].url;
+                    tempJSObject.thumbnail = individualImageUrls[i].url;
+                    tempJSObject.thumbnailWidth = 150;
+                    tempJSObject.thumbnailHeight = 150;
+                    imagesToRenderTemp.push(tempJSObject);
                 }
                 // console.log(`imageUrls from server is ${imageUrls.toString()}`);
                 console.log(`imageUrls from server without .toString() method is ${imageUrls}`);
@@ -94,10 +121,15 @@ class AddSchool extends Component{
                     renderAboutUsPage: true,
                     aboutUsPageData: response.aboutData,
                     aboutUsPageTitle: response.aboutTitle,
+                    renderImages: true,
+                    imagesToRender: imagesToRenderTemp,
                 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
                 alert('error');
+                self.setState({
+                    renderLoader: false,
+                })
             }
         });
     }
@@ -138,6 +170,7 @@ class AddSchool extends Component{
                 <DisplaySchool websiteChecked={this.state.websiteChecked} validSchoolUrl={this.state.validSchoolUrl}/>
                 <DisplayLoader renderLoader={this.state.renderLoader} onMount={this.parseSchoolPage}/>
                 <SchoolPageCrawled onUpdate={this.onAboutSchoolUpdate} titleOfPage={this.state.aboutUsPageTitle} aboutPageContent={this.state.aboutUsPageData}/>
+                <DisplayImages titleOfPage={this.state.aboutUsPageTitle} renderImages={this.state.renderImages} imagesToRender={this.state.imagesToRender}/>
             </div>
         );
     };

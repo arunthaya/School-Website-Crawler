@@ -35,8 +35,6 @@ public class MyCrawler extends WebCrawler {
 
     @Override
     public void visit(Page page){
-        //System.out.println("currently crawling and checking "+page.getWebURL().getURL());
-        //this.getMyController().getConfig().setPolitenessDelay(200);
         startTime = new Date();
         int docid = page.getWebURL().getDocid();
         BasicDBObject pageToStore = new BasicDBObject();
@@ -50,17 +48,20 @@ public class MyCrawler extends WebCrawler {
         }
         aboutUsPage = MyTika.getInstance().validAboutUsPage(url);
         String aboutPageToCompare = page.getWebURL().getURL();
+        System.out.println("currently visiting: "+aboutPageToCompare);
         String absoluteAboutPage = MyCrawlController.SEED1;
         if(!aboutPageToCompare.endsWith(".pdf")){
             MyJsoup.getInstance().storeImgAltInfo(aboutPageToCompare);
         }
         if(page.getWebURL().getURL().endsWith("/")){
             aboutPageToCompare = aboutPageToCompare.substring(0, aboutPageToCompare.length() - 1);
+        }
+        if(absoluteAboutPage.endsWith("/")){
             absoluteAboutPage = absoluteAboutPage.substring(0,absoluteAboutPage.length() - 1);
         }
         absoluteAboutPage += "/about";
         if(aboutUsPage && (aboutPageToCompare.equals(absoluteAboutPage))){
-            //System.out.println("Found a valid about us page");
+            System.out.println("Found a valid about us page");
             schoolName = MyTika.getInstance().store(url,pageToStore);
             paragraphs = MyJsoup.getInstance().getParagraphSelector(page.getWebURL().getURL());
             MongoDB.getInstance().addBasicDBObject(pageToStore);

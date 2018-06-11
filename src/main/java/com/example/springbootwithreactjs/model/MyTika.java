@@ -14,13 +14,22 @@ import java.net.URL;
 public class MyTika {
 
     private static MyTika instance;
+    private static StringHelperClass instanceStringHelper;
     private ParseContext context;
     private Metadata metadata;
     private Parser parser;
+    private static String schoolNameCurrent = "";
+
+    public static String getSchoolNameCurrent() {
+        return schoolNameCurrent;
+    }
+
+
 
     public static MyTika getInstance(){
         if(instance == null){
             instance = new MyTika();
+            instanceStringHelper = StringHelperClass.getInstance();
         }
         return instance;
     }
@@ -60,9 +69,10 @@ public class MyTika {
             InputStream input = TikaInputStream.get(url, metadata);
             BodyContentHandler handler = new BodyContentHandler(2000000);
             parser.parse(input, handler, metadata, context);
-            int urlParsed = StringHelperClass.validSchoolUrlChecker(url.toString());
-            int titleParsed = StringHelperClass.validSchoolUrlChecker(metadata.get("title"));
-            int metaParsed = StringHelperClass.validSchoolUrlChecker(metadata.toString());
+            int urlParsed = instanceStringHelper.validSchoolUrlChecker(url.toString());
+            int titleParsed = instanceStringHelper.validSchoolUrlChecker(metadata.get("title"));
+            int metaParsed = instanceStringHelper.validSchoolUrlChecker(metadata.toString());
+            schoolNameCurrent = instanceStringHelper.schoolName(metadata.get("title"));
             if(urlParsed > 0 || titleParsed > 0 || metaParsed > 0){
                 return true;
             }
@@ -80,9 +90,9 @@ public class MyTika {
             InputStream input = TikaInputStream.get(url, metadata);
             BodyContentHandler handler = new BodyContentHandler(2000000);
             parser.parse(input, handler, metadata, context);
-            int urlParsed = StringHelperClass.aboutPageChecker(url.toString());
-            int titleParsed = StringHelperClass.aboutPageChecker(metadata.get("title"));
-            int metaParsed = StringHelperClass.aboutPageChecker(metadata.toString());
+            int urlParsed = instanceStringHelper.aboutPageChecker(url.toString());
+            int titleParsed = instanceStringHelper.aboutPageChecker(metadata.get("title"));
+            int metaParsed = instanceStringHelper.aboutPageChecker(metadata.toString());
             //System.out.println("    the numbers are as follows: " + urlParsed + " " + titleParsed + " " +metaParsed);
             if(urlParsed > 0 || titleParsed > 0 || metaParsed > 0){
                 return true;

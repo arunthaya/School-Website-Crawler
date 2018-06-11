@@ -96,3 +96,13 @@ nav ul li:active {
   margin-top: 10px;
 }
 
+#images{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#images h1{
+  text-align: justify;
+  margin: 0px;
+  padding-bottom: 10px;
+}

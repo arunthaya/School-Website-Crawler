@@ -14,7 +14,7 @@ class Loader extends Component {
     render() {
         return (
             <div>
-                <p>Please wait while all relevant information is retrieved. This can take 5 mins.</p>,
+                <p>Please wait while all relevant information is retrieved. This can take up to 5 mins.</p>,
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
             </div>
         );

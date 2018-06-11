@@ -1,28 +1,69 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
-class Searchbar extends Component{
+class Searchbar extends Component {
     constructor(props){
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state ={
+            selectedOption: '',
+        }
     }
 
-    handleSubmit(event){
-        alert('Name was submitted' + this.input.value);
-        event.preventDefault();
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        // selectedOption can be null when the `x` (close) button is clicked
+        if (selectedOption) {
+            console.log(`Selected: ${selectedOption.label}`);
+        }
     }
 
-    render(){
-        return(
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" ref={(input) => this.input = input} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+    handleSubmit(e){
+        console.log('hello');
+    }
+
+    render() {
+        const { selectedOption } = this.state;
+
+        return (
+            <div id="search">
+                <form onSubmit={this.handleSubmit}>
+                    <div className="nice-wrap">
+                        <Select id="searchBarSelect"
+                            name="form-field-name"
+                            value={selectedOption}
+                            onChange={this.handleChange}
+                            options={[
+                                { value: 'one', label: 'One' },
+                                { value: 'two', label: 'Two' },
+                            ]}/>
+                        <input id="btn" type="submit" value="Submit" onClick={this.handleSubmit}/>
+                    </div>
+                </form>
+            </div>
         );
     }
 }
 
+
+
+/*
+class Searchbar extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            value: '',
+            suggestions: []
+        };
+    }
+
+    render() {
+        return (
+            <p>Hello!</p>
+        );
+    }
+}
+*/
 export default Searchbar;
+
