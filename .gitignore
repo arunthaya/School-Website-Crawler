@@ -23,6 +23,7 @@
 hs_err_pid*
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # User-specific stuff:
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -90,6 +91,11 @@ fabric.properties
 #node modules
 node_modules/
 
+=======
+# Ignore node modules & ide
+node_modules
+wordspace.xml
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
 # Ignore node modules & ide
 node_modules

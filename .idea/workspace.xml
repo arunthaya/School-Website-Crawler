@@ -63,9 +63,12 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="778">
               <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
 =======
+=======
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
             <state relative-caret-position="1326">
               <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
               <folding>
@@ -81,8 +84,13 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
 <<<<<<< HEAD
+<<<<<<< HEAD
               <first_editor relative-caret-position="120">
                 <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+=======
+              <first_editor relative-caret-position="629">
+                <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
               <first_editor relative-caret-position="629">
                 <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
@@ -94,12 +102,15 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="About.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example-frontend/src/container/About.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
 =======
+=======
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
@@ -144,10 +155,13 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="SchoolUrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example-frontend/src/container/SchoolUrl.js">
           <provider selected="true" editor-type-id="text-editor" />
 =======
+=======
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
       <file leaf-file-name="ActualSearchBar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example-frontend/src/container/ActualSearchBar.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -269,6 +283,9 @@
     <option name="y" value="-10" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
+<<<<<<< HEAD
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
+=======
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
   </component>
   <component name="ProjectLevelVcsManager">
@@ -284,6 +301,9 @@
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+<<<<<<< HEAD
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
+=======
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
       <pane id="ProjectPane">
         <subPane>
@@ -297,9 +317,12 @@
         </subPane>
       </pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+=======
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
     </panes>
@@ -398,9 +421,14 @@
       <workItem from="1528426549706" duration="4556000" />
       <workItem from="1528468756753" duration="17995000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1528646088465" duration="64403000" />
       <workItem from="1528777886511" duration="1200000" />
       <workItem from="1529279513736" duration="255000" />
+=======
+      <workItem from="1528646088465" duration="64780000" />
+      <workItem from="1528834415744" duration="166000" />
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
       <workItem from="1528646088465" duration="64780000" />
       <workItem from="1528834415744" duration="166000" />
@@ -410,7 +438,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="150878000" />
+=======
+    <option name="totallyTimeSpent" value="149966000" />
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
     <option name="totallyTimeSpent" value="149966000" />
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
@@ -444,6 +476,9 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.35763097" />
 =======
       <window_info anchor="bottom" id="TODO" order="6" weight="0.35875705" />
+<<<<<<< HEAD
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
+=======
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
@@ -454,7 +489,11 @@
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32801822" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.33898306" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.25612354" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2543624" />
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2543624" />
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
@@ -466,7 +505,11 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49934897" weight="0.32118452" />
+=======
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49934897" weight="0.3220339" />
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49934897" weight="0.3220339" />
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
@@ -480,7 +523,11 @@
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32909605" />
       <window_info id="Image Layers" order="3" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49934897" weight="0.32909605" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7708333" visible="true" weight="0.40254238" />
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7708333" visible="true" weight="0.40254238" />
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
@@ -521,6 +568,7 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/example-frontend/src/container/SchoolUrl.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -535,6 +583,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example-frontend/src/container/About.js">
+=======
+    <entry file="file://$PROJECT_DIR$/example-frontend/src/container/AddSchool.js">
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="240">
@@ -559,6 +610,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+<<<<<<< HEAD
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
+=======
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
         </state>
       </provider>
@@ -580,6 +634,9 @@
 =======
         <state relative-caret-position="323">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+<<<<<<< HEAD
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
+=======
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
         </state>
       </provider>
@@ -653,6 +710,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example-frontend/node_modules/react-autosuggest/dist/Autosuggest.js" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/example-frontend/src/container/constants/SearchBarConsts.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+>>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
 =======
     <entry file="file://$PROJECT_DIR$/example-frontend/src/container/constants/SearchBarConsts.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -918,6 +981,13 @@
           </first_editor>
           <second_editor />
 >>>>>>> 8f7a068184453ff17a03501fb4691a2e99c92ab0
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
