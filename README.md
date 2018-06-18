@@ -3,10 +3,10 @@
 Simple web app that takes school related websites, and retrieves important information from that website. This information may include:
 - [x] About Me Page
 - [x] Photos
-- [] Location
-- [] Programs
-- [] Key Staff Members
-- [] Departments
+- [ ] Location
+- [ ] Programs
+- [ ] Key Staff Members
+- [ ] Departments
 
 Requirements to run:
 - Maven
