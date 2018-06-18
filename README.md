@@ -1,4 +1,4 @@
-# React_page_parser
+# School Site Crawler
 
 Simple web app that takes school related websites, and retrieves important information from that website. This information may include:
 - [x] About Me Page
