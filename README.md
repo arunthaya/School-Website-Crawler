@@ -13,7 +13,7 @@ Requirements to run:
 - Node.js
 - MongoDB
 
-To run this app:
+## Instructions
 
 1. First install Maven as an application, and make sure you have the path environmental variable declared with your os.
     
@@ -42,6 +42,9 @@ To run this app:
 7. Run yarn:
 
         `yarn start`
+
+## Images
+
 
 Enjoy using the app!
     
