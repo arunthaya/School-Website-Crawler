@@ -45,6 +45,18 @@ Requirements to run:
 
 ## Images
 
+Adding a valid school url:
+
+![screen shot 2018-06-17 at 10 09 15 pm](https://user-images.githubusercontent.com/25303677/41515491-2042a744-727d-11e8-80bf-7f27f889b96b.png)
+
+Checking to see if it is a valid school url: 
+
+![screen shot 2018-06-17 at 10 10 41 pm](https://user-images.githubusercontent.com/25303677/41515535-4f9a8c46-727d-11e8-98e4-f56c62fd3db8.png)
+
+After parsing the page: 
+
+![screen shot 2018-06-17 at 10 16 25 pm](https://user-images.githubusercontent.com/25303677/41515606-c9a38268-727d-11e8-9a7e-0a7ee0eeed06.png)
+
 
 Enjoy using the app!
     
