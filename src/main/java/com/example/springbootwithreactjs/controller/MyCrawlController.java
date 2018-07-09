@@ -1,6 +1,5 @@
 package com.example.springbootwithreactjs.controller;
 
-import com.example.springbootwithreactjs.database.MongoDB;
 import com.example.springbootwithreactjs.model.MyJsoup;
 import com.example.springbootwithreactjs.model.MyTika;
 import com.google.gson.JsonObject;
@@ -56,7 +55,6 @@ public class MyCrawlController {
             response.addProperty("aboutTitle", MyTika.getInstance().getSchoolNameCurrent());
         }
         response.addProperty("images", MyJsoup.getInstance().getImageArrayJson().toString());
-        MongoDB.getInstance().addFinalPage(response);
         //response.add("images", MyJsoup.getInstance().getImages());
         //System.out.println(MyJsoup.getInstance().getImages().toString());
         System.out.println("response obj is: "+response.toString());

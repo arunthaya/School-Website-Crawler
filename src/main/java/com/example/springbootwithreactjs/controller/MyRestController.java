@@ -1,11 +1,10 @@
 package com.example.springbootwithreactjs.controller;
 
-import com.example.springbootwithreactjs.database.MongoDB;
+
 import com.example.springbootwithreactjs.model.MyTika;
 import com.example.springbootwithreactjs.model.StringHelperClass;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.mongodb.BasicDBObject;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
@@ -26,15 +25,12 @@ public class MyRestController {
     @CrossOrigin(origins = "http://localhost:3000")
     public boolean urlSubmitted(WebRequest request){
         System.out.println(request.getParameter("suggest"));
-        BasicDBObject toInsert = new BasicDBObject();
         URL url = null;
         try{
             url = new URL(request.getParameter("suggest"));
         } catch(MalformedURLException e1){
             e1.printStackTrace();
         }
-        toInsert.append(MongoDB.URL, request.getParameter("suggest"));
-        //MongoDB.getInstance().addBasicDBObject(toInsert);
         return MyTika.getInstance().validSchoolUrl(url);
     }
 
@@ -58,7 +54,7 @@ public class MyRestController {
     @RequestMapping(value = "/school_list", method = RequestMethod.GET)
     @CrossOrigin(origins = "http://localhost:3000")
     public String finalSchoolRetrieval(){
-        return MongoDB.getInstance().queryFinalSchoolPages().toString();
+        return null;
     }
 
 }

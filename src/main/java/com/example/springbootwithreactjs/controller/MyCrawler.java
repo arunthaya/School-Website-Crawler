@@ -1,9 +1,7 @@
 package com.example.springbootwithreactjs.controller;
 
-import com.example.springbootwithreactjs.database.MongoDB;
 import com.example.springbootwithreactjs.model.MyJsoup;
 import com.example.springbootwithreactjs.model.MyTika;
-import com.mongodb.BasicDBObject;
 import edu.uci.ics.crawler4j.crawler.Page;
 import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.url.WebURL;
@@ -37,8 +35,6 @@ public class MyCrawler extends WebCrawler {
     public void visit(Page page){
         startTime = new Date();
         int docid = page.getWebURL().getDocid();
-        BasicDBObject pageToStore = new BasicDBObject();
-        pageToStore.append(MongoDB.URL, page.getWebURL().getURL());
         boolean aboutUsPage = false;
         URL url = null;
         try{
@@ -65,9 +61,7 @@ public class MyCrawler extends WebCrawler {
         }
         if(aboutUsPage && (aboutPageToCompare.equals(absoluteAboutPage))){
             System.out.println("Found a valid about us page");
-            schoolName = MyTika.getInstance().store(url,pageToStore);
             paragraphs = MyJsoup.getInstance().getParagraphSelector(page.getWebURL().getURL());
-            MongoDB.getInstance().addBasicDBObject(pageToStore);
         }
     }
 
