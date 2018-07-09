@@ -11,7 +11,6 @@ Simple web app that takes school related websites, and retrieves important infor
 Requirements to run:
 - Maven
 - Node.js
-- MongoDB
 
 ## Instructions
 
@@ -23,23 +22,19 @@ Requirements to run:
 
         `mvn install`
     
-3. Install MongoDB and run this command:
-   
-        `mongod`
-
-4. Install Node.js, and install yarn via npm
+3. Install Node.js, and install yarn via npm
 
         `npm install -g yarn`
     
-5. Run mvn now that all the dependencies have installed:
+4. Run mvn now that all the dependencies have installed:
    
         `mvn spring-boot:run`
  
-6. CD into the example-frontend folder and run:
+5. CD into the example-frontend folder and run:
 
         `npm install`
     
-7. Run yarn:
+6. Run yarn:
 
         `yarn start`
 
