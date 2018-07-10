@@ -24,8 +24,8 @@ public class MyRestController {
     private JsonArray schools;
 
 
-    @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
-    @CrossOrigin(origins = "https://clever-bartik-f51fc7.netlify.com/addschool")
+    @RequestMapping(value = "/urlsubmitted", method = RequestMethod.GET)
+    @CrossOrigin(origins = "https://clever-bartik-f51fc7.netlify.com/")
     public boolean urlSubmitted(WebRequest request){
         System.out.println(request.getParameter("suggest"));
         URL url = null;
@@ -37,8 +37,8 @@ public class MyRestController {
         return MyTika.getInstance().validSchoolUrl(url);
     }
 
-    @RequestMapping(value = "/urlToParse", method = RequestMethod.POST)
-    @CrossOrigin(origins = "https://clever-bartik-f51fc7.netlify.com/addschool")
+    @RequestMapping(value = "/urltoparse", method = RequestMethod.POST)
+    @CrossOrigin(origins = "https://clever-bartik-f51fc7.netlify.com/")
     public String urlParsed(WebRequest request){
         JsonObject responseObj = new JsonObject();
         //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
