@@ -19,7 +19,7 @@ public class MyConfiguration {
                 System.out.println("-------------------------------------------->");
                 System.out.println("inside corsMapping adding cors path: "+SpringBootWithReactJsApplication.CROSS_ORIGINS_PATH);
                 System.out.println("-------------------------------------------->");
-                registry.addMapping("/api/**")
+                registry.addMapping("/**")
                         .allowedOrigins(SpringBootWithReactJsApplication.CROSS_ORIGINS_PATH)
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("header1", "header2", "header3")
