@@ -21,7 +21,7 @@ public class MyConfiguration {
                 System.out.println("-------------------------------------------->");
                 registry.addMapping("/**")
                         .allowedOrigins(SpringBootWithReactJsApplication.CROSS_ORIGINS_PATH)
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedMethods("GET", "HEAD", "POST")
                         .allowedHeaders("header1", "header2", "header3")
                         .exposedHeaders("header1", "header2")
                         .allowCredentials(false).maxAge(3600);
