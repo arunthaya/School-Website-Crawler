@@ -63,7 +63,12 @@
 			<artifactId>crawler4j</artifactId>
 			<version>4.4.0</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.11.363</version>
+		</dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

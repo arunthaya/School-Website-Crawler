@@ -6,6 +6,7 @@ import com.example.springbootwithreactjs.model.StringHelperClass;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
