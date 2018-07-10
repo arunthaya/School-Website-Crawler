@@ -19,12 +19,7 @@ public class MyConfiguration {
                 System.out.println("-------------------------------------------->");
                 System.out.println("inside corsMapping adding cors path: "+SpringBootWithReactJsApplication.CROSS_ORIGINS_PATH);
                 System.out.println("-------------------------------------------->");
-                registry.addMapping("/**")
-                        .allowedOrigins(SpringBootWithReactJsApplication.CROSS_ORIGINS_PATH)
-                        .allowedMethods("GET", "HEAD", "POST")
-                        .allowedHeaders("header1", "header2", "header3")
-                        .exposedHeaders("header1", "header2")
-                        .allowCredentials(false).maxAge(3600);
+                registry.addMapping("/**");
             }
         };
     }
