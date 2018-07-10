@@ -12,8 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
-import javax.annotation.PostConstruct;
-import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -25,7 +23,6 @@ public class MyRestController {
 
     private JsonArray schools;
 
-    private final static String CROSS_ORIGINS_URL = "h";
 
     @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
     public boolean urlSubmitted(WebRequest request){
