@@ -1,15 +1,18 @@
 package com.example.springbootwithreactjs.controller;
 
 
+import com.example.springbootwithreactjs.SpringBootWithReactJsApplication;
 import com.example.springbootwithreactjs.model.MyTika;
 import com.example.springbootwithreactjs.model.StringHelperClass;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
+import javax.annotation.PostConstruct;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,8 +25,9 @@ public class MyRestController {
 
     private JsonArray schools;
 
+    private final static String CROSS_ORIGINS_URL = "h";
+
     @RequestMapping(value = "/urlsubmitted", method = RequestMethod.POST)
-    @CrossOrigin(origins = "http://localhost:3000")
     public boolean urlSubmitted(WebRequest request){
         System.out.println(request.getParameter("suggest"));
         URL url = null;
@@ -36,7 +40,6 @@ public class MyRestController {
     }
 
     @RequestMapping(value = "/urlToParse", method = RequestMethod.POST)
-    @CrossOrigin(origins = "http://localhost:3000")
     public String urlParsed(WebRequest request){
         JsonObject responseObj = new JsonObject();
         //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
@@ -53,7 +56,6 @@ public class MyRestController {
     }
 
     @RequestMapping(value = "/school_list", method = RequestMethod.GET)
-    @CrossOrigin(origins = "http://localhost:3000")
     public String finalSchoolRetrieval(){
         return null;
     }

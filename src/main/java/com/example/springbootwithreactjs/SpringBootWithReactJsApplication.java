@@ -7,11 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringBootWithReactJsApplication {
 
-	public static String crossOriginsUrl;
+	public static String CROSS_ORIGINS_PATH;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootWithReactJsApplication.class, args);
-		crossOriginsUrl = System.getenv().get("CROSS_ORIGINS_PATH");
-		System.out.println("crossOriginsUrl is: "+crossOriginsUrl);
+		CROSS_ORIGINS_PATH = System.getenv().get("CROSS_ORIGINS_PATH");
 	}
 }
