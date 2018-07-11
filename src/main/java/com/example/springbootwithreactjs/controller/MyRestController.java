@@ -46,15 +46,16 @@ public class MyRestController {
     public String urlParsed(WebRequest request){
         JsonObject responseObj = new JsonObject();
         //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
-        System.out.println("request coming in for Urltoparse is "+request.getParameter("urlToParse"));
-        try {
-            MyCrawlController toCrawl = new MyCrawlController(request.getParameter("urlToParse"));
-            toCrawl.crawl(responseObj);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        //System.out.println("length of aboutus page: " + aboutUsPage.length() + " about us page after " + aboutUsPage + "");
-        System.out.println("control flow returned to Java- Spring");
+//        System.out.println("request coming in for Urltoparse is "+request.getParameter("urlToParse"));
+//        try {
+//            MyCrawlController toCrawl = new MyCrawlController(request.getParameter("urlToParse"));
+//            toCrawl.crawl(responseObj);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        //System.out.println("length of aboutus page: " + aboutUsPage.length() + " about us page after " + aboutUsPage + "");
+//        System.out.println("control flow returned to Java- Spring");
+        responseObj.addProperty("data", "hello");
         return responseObj.toString();
     }
 
