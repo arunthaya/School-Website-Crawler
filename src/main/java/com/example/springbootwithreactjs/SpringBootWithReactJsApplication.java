@@ -16,12 +16,15 @@ public class SpringBootWithReactJsApplication {
 		SpringApplication.run(SpringBootWithReactJsApplication.class, args);
 	}
 
+	//possibly take out
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://clever-bartik-f51fc7.netlify.com/");
+				registry.addMapping("/**").allowedOrigins(
+						"https://clever-bartik-f51fc7.netlify.com/"
+				);
 			}
 		};
 	}

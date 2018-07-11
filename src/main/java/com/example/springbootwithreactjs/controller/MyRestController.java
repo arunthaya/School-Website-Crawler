@@ -29,7 +29,7 @@ public class MyRestController {
 
 
     @RequestMapping(value = "/urlsubmitted", method = RequestMethod.GET)
-    @CrossOrigin("https://clever-bartik-f51fc7.netlify.com/")
+    @CrossOrigin(origins = "https://clever-bartik-f51fc7.netlify.com/", allowedHeaders = "*")
     public boolean urlSubmitted(WebRequest request){
         System.out.println(request.getParameter("suggest"));
         URL url = null;
@@ -42,7 +42,7 @@ public class MyRestController {
     }
 
     @RequestMapping(value = "/urltoparse", method = RequestMethod.POST)
-    @CrossOrigin("https://clever-bartik-f51fc7.netlify.com/")
+    @CrossOrigin(origins = "https://clever-bartik-f51fc7.netlify.com/", allowedHeaders = "*")
     public String urlParsed(WebRequest request){
         JsonObject responseObj = new JsonObject();
         //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
