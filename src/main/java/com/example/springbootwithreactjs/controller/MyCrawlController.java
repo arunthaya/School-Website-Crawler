@@ -35,8 +35,9 @@ public class MyCrawlController {
         /*CrawlConfig config for testing */
         config.setCrawlStorageFolder(crawlStorageFolder);
         config.setPolitenessDelay(10);
-        config.setMaxPagesToFetch(1000);
-        config.setMaxDepthOfCrawling(3);
+        //config.setMaxPagesToFetch(1000);
+        config.setMaxPagesToFetch(10);
+        config.setMaxDepthOfCrawling(1);
         config.setIncludeHttpsPages(true);
         config.setResumableCrawling(false);
         config.setIncludeBinaryContentInCrawling(false);
