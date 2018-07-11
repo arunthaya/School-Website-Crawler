@@ -32,7 +32,9 @@ public class MyRestController {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*");
+                registry.addMapping("/**").allowedOrigins("*").allowedMethods(
+                        "GET", "POST", "PUT", "DELETE"
+                ).allowedHeaders("*");
             }
         };
     }
@@ -50,6 +52,7 @@ public class MyRestController {
     }
 
     @RequestMapping(value = "/urltoparse", method = RequestMethod.POST)
+    @CrossOrigin(origins="https://clever-bartik-f51fc7.netlify.com/", allowedHeaders="*")
     public String urlParsed(WebRequest request){
         JsonObject responseObj = new JsonObject();
         //System.out.println("length of aboutus page: " + aboutUsPage.length() + "aboutUsPage string before " + aboutUsPage);
