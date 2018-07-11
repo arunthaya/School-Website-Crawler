@@ -36,7 +36,7 @@ public class MyCrawlController {
         config.setCrawlStorageFolder(crawlStorageFolder);
         config.setPolitenessDelay(10);
         //config.setMaxPagesToFetch(1000);
-        config.setMaxPagesToFetch(10);
+        config.setMaxPagesToFetch(2);
         config.setMaxDepthOfCrawling(1);
         config.setIncludeHttpsPages(true);
         config.setResumableCrawling(false);
