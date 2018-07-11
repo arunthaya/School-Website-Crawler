@@ -3,17 +3,27 @@ package com.example.springbootwithreactjs;
 import com.example.springbootwithreactjs.controller.MyRestController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
 public class SpringBootWithReactJsApplication {
 
-	public static String CROSS_ORIGINS_PATH;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootWithReactJsApplication.class, args);
-		CROSS_ORIGINS_PATH = System.getenv().get("CROSS_ORIGINS_PATH");
-		System.out.println("-------------------------------------------->");
-		System.out.println("The cross_origins_path allowed is: "+CROSS_ORIGINS_PATH);
-		System.out.println("-------------------------------------------->");
 	}
+
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurerAdapter() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("https://clever-bartik-f51fc7.netlify.com/");
+			}
+		};
+	}
+
 }
