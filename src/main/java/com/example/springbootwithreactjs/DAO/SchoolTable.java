@@ -14,11 +14,20 @@ public class SchoolTable implements Serializable {
     @Column(name = "school", nullable = false)
     private String schoolName;
 
-    @Column(name = "location", nullable = false)
+    @Column(name = "location")
     private String schoolLocation;
 
-    @Column(name = "about", nullable = false)
+    @Column(name = "about")
     private String aboutParagraph;
+
+    protected SchoolTable(){
+    }
+
+    public SchoolTable(String schoolName, String schoolLocation, String aboutParagraph){
+        this.schoolName = schoolName;
+        this.schoolLocation = schoolLocation;
+        this.aboutParagraph = aboutParagraph;
+    }
 
     public Long get_id() {
         return _id;

@@ -1,5 +1,7 @@
 package com.example.springbootwithreactjs.controller;
 
+import com.example.springbootwithreactjs.DAO.SchoolRepository;
+import com.example.springbootwithreactjs.DAO.SchoolTable;
 import com.example.springbootwithreactjs.model.MyJsoup;
 import com.example.springbootwithreactjs.model.MyTika;
 import com.google.gson.JsonObject;
@@ -8,10 +10,14 @@ import edu.uci.ics.crawler4j.crawler.CrawlController;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 
 public class MyCrawlController {
+
+    @Autowired
+    SchoolRepository repository;
 
     public static String SEED1;
 
@@ -23,7 +29,7 @@ public class MyCrawlController {
     public void crawl(JsonObject response) throws Exception {
         String crawlStorageFolder = "~/crawlStorage";
         int numberOfCrawlers = 10;
-
+        repository.save(new SchoolTable("carleton", "ottawa", "hello"));
         CrawlConfig config = new CrawlConfig();
 //        config.setCrawlStorageFolder(crawlStorageFolder);
 //        config.setPolitenessDelay(150);
