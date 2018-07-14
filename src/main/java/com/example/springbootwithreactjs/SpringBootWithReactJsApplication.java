@@ -22,30 +22,30 @@ public class SpringBootWithReactJsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootWithReactJsApplication.class, args);
-		Statement stmt = null;
-		try {
-			c = getConnection();
-			stmt = c.createStatement();
-			String sql = "CREATE TABLE SCHOOL " +
-					"(ID INT PRIMARY KEY	NOT NULL," +
-					" NAME			TEXT	NOT NULL, " +
-					" AGE			INT 	NOT NULL, " +
-					" ADDRESS		CHAR(50))";
-			stmt.executeUpdate(sql);
-			stmt.close();
-			c.close();
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		Statement stmt = null;
+//		try {
+//			c = getConnection();
+//			stmt = c.createStatement();
+//			String sql = "CREATE TABLE SCHOOL " +
+//					"(ID INT PRIMARY KEY	NOT NULL," +
+//					" NAME			TEXT	NOT NULL, " +
+//					" AGE			INT 	NOT NULL, " +
+//					" ADDRESS		CHAR(50))";
+//			stmt.executeUpdate(sql);
+//			stmt.close();
+//			c.close();
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 	}
 
-	private static Connection getConnection() throws URISyntaxException, SQLException {
-		URI dbUri = new URI(System.getenv("DATABASE_URL"));
-		String username = dbUri.getUserInfo().split(":")[0];
-		String password = dbUri.getUserInfo().split(":")[1];
-		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-		return DriverManager.getConnection(dbUrl, username, password);
-	}
+//	private static Connection getConnection() throws URISyntaxException, SQLException {
+//		URI dbUri = new URI(System.getenv("DATABASE_URL"));
+//		String username = dbUri.getUserInfo().split(":")[0];
+//		String password = dbUri.getUserInfo().split(":")[1];
+//		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+//		return DriverManager.getConnection(dbUrl, username, password);
+//	}
 }
