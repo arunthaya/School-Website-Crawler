@@ -46,6 +46,12 @@ public class MyRestController {
         return MyTika.getInstance().validSchoolUrl(url);
     }
 
+    @RequestMapping(value = "/testing", method = RequestMethod.GET)
+    public String testingDatabaseInsertion(){
+        schoolrepository.save(new SchoolTable("carleton", "ottawa", "hello"));
+        return "success";
+    }
+
     @RequestMapping(value = "/urltoparse", method = RequestMethod.POST)
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public String urlParsed(WebRequest request){
