@@ -63,6 +63,6 @@ public class SchoolTable implements Serializable {
 
     @Override
     public String toString(){
-        return String.format("SchoolName[id='%d', schoolName='%s', schoolLocation='%s', aboutParagraph='%s']");
+        return String.format("SchoolName[id='%d', schoolName='%s', schoolLocation='%s', aboutParagraph='%s']", _id, schoolName, schoolLocation, aboutParagraph);
     }
 }
