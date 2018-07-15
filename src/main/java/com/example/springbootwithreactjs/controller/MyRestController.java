@@ -74,6 +74,9 @@ public class MyRestController {
     public String finalSchoolRetrieval(){
 
         List<SchoolTable> schools = (List<SchoolTable>) schoolrepository.findAll();
+        for(SchoolTable school: schools){
+            System.out.println(school.toString());
+        }
 
         return schools.toString();
     }

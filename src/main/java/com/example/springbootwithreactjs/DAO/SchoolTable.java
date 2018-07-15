@@ -60,4 +60,9 @@ public class SchoolTable implements Serializable {
     public void setAboutParagraph(String aboutParagraph) {
         this.aboutParagraph = aboutParagraph;
     }
+
+    @Override
+    public String toString(){
+        return String.format("SchoolName[id=%d, schoolName='%s', schoolLocation='%s', aboutParagraph='%s']");
+    }
 }
