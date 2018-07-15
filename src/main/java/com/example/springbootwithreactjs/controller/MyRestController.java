@@ -1,6 +1,8 @@
 package com.example.springbootwithreactjs.controller;
 
 
+import com.example.springbootwithreactjs.DAO.SchoolRepository;
+import com.example.springbootwithreactjs.DAO.SchoolTable;
 import com.example.springbootwithreactjs.SpringBootWithReactJsApplication;
 import com.example.springbootwithreactjs.model.MyTika;
 import com.example.springbootwithreactjs.model.StringHelperClass;
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  */
@@ -27,6 +30,8 @@ public class MyRestController {
 
     private JsonArray schools;
 
+    @Autowired
+    private SchoolRepository schoolrepository;
 
     @RequestMapping(value = "/urlsubmitted", method = RequestMethod.GET)
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -61,7 +66,10 @@ public class MyRestController {
 
     @RequestMapping(value = "/school_list", method = RequestMethod.GET)
     public String finalSchoolRetrieval(){
-        return null;
+
+        List<SchoolTable> schools = (List<SchoolTable>) schoolrepository.findAll();
+
+        return schools.toString();
     }
 
 }
