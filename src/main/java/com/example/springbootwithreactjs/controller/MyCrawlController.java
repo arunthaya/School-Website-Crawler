@@ -1,6 +1,7 @@
 package com.example.springbootwithreactjs.controller;
 
-import com.example.springbootwithreactjs.database.MongoDB;
+import com.example.springbootwithreactjs.DAO.SchoolRepository;
+import com.example.springbootwithreactjs.DAO.SchoolTable;
 import com.example.springbootwithreactjs.model.MyJsoup;
 import com.example.springbootwithreactjs.model.MyTika;
 import com.google.gson.JsonObject;
@@ -9,10 +10,14 @@ import edu.uci.ics.crawler4j.crawler.CrawlController;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 
 public class MyCrawlController {
+
+    @Autowired
+    SchoolRepository repository;
 
     public static String SEED1;
 
@@ -24,7 +29,7 @@ public class MyCrawlController {
     public void crawl(JsonObject response) throws Exception {
         String crawlStorageFolder = "~/crawlStorage";
         int numberOfCrawlers = 10;
-
+        repository.save(new SchoolTable("carleton", "ottawa", "hello"));
         CrawlConfig config = new CrawlConfig();
 //        config.setCrawlStorageFolder(crawlStorageFolder);
 //        config.setPolitenessDelay(150);
@@ -36,8 +41,9 @@ public class MyCrawlController {
         /*CrawlConfig config for testing */
         config.setCrawlStorageFolder(crawlStorageFolder);
         config.setPolitenessDelay(10);
-        config.setMaxPagesToFetch(1000);
-        config.setMaxDepthOfCrawling(3);
+        //config.setMaxPagesToFetch(1000);
+        config.setMaxPagesToFetch(2);
+        config.setMaxDepthOfCrawling(1);
         config.setIncludeHttpsPages(true);
         config.setResumableCrawling(false);
         config.setIncludeBinaryContentInCrawling(false);
@@ -56,7 +62,6 @@ public class MyCrawlController {
             response.addProperty("aboutTitle", MyTika.getInstance().getSchoolNameCurrent());
         }
         response.addProperty("images", MyJsoup.getInstance().getImageArrayJson().toString());
-        MongoDB.getInstance().addFinalPage(response);
         //response.add("images", MyJsoup.getInstance().getImages());
         //System.out.println(MyJsoup.getInstance().getImages().toString());
         System.out.println("response obj is: "+response.toString());

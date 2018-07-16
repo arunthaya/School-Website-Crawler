@@ -1,6 +1,5 @@
 package com.example.springbootwithreactjs.model;
 
-import com.mongodb.BasicDBObject;
 import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.AutoDetectParser;
@@ -43,7 +42,7 @@ public class MyTika {
         }
     }
 
-    public String store(URL url, BasicDBObject MongoDoc){
+    public String store(URL url){
         //System.out.println("Url entered was: "+url);
         try {
             parser = new AutoDetectParser();
@@ -51,9 +50,6 @@ public class MyTika {
             InputStream input = TikaInputStream.get(url, metadata);
             BodyContentHandler handler = new BodyContentHandler(2000000);
             parser.parse(input, handler, metadata, context);
-            MongoDoc.append("titleofpage", metadata.get("title"));
-            MongoDoc.append("contentofpage", handler.toString());
-            MongoDoc.append("metadata", metadata.toString());
             input.close();
             return metadata.get("title");
         } catch (Exception e){
